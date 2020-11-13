@@ -25,6 +25,9 @@ public class TileController : MonoBehaviour
     public float MaxPower = 24.0f;
 
 
+    public GameObject player;
+    public GameObject spawn;
+
     public Grid grid;
     public Tilemap tilemap;
     public Tile rockTile;
@@ -38,16 +41,17 @@ public class TileController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Instantiate(player, spawn.transform.position, Quaternion.identity);
         Generate();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Generate();
-        }
+        //if (Input.GetKeyDown(KeyCode.R))
+        //{
+        //    Generate();
+        //}
     }
 
     public void InitTiles()
@@ -68,6 +72,7 @@ public class TileController : MonoBehaviour
 
     public void Generate()
     {
+        //player.transform.position = transform.position;
         Tiles = new TileTypes[width, height];
         TileArray = new Tile[width, height];
         InitTiles();
